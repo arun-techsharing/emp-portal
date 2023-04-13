@@ -1,0 +1,41 @@
+<h1>Contact Us</h1>
+<form #cnt="ngForm" (ngSubmit)="submitQuery(cnt)">
+    <div>
+        <label>First Name:</label>
+        <input type="text" name="firstNm" #nm="ngModel" ngModel required minlength="6">
+    </div>
+    <div>
+        <label>Last Name:</label>
+        <input type="text" name="lNm" ngModel required maxlength="5">
+    </div>
+    <div>
+        <label>email:</label>
+        <input type="text" name="addr" ngModel email>
+    </div>
+    <div>
+        <label>Mbl Number:</label>
+        <input type="text" name="mblNbr" ngModel>
+    </div>
+    <div>
+        <label>City:</label>
+        <select name="cty" ngModel>
+            <option>Chennai</option>
+            <option>Bangalore</option>
+            <option>Hyderabad</option>
+            <option>Mumbai</option>
+        </select>
+    </div>
+    <div>
+        <button type="submit" [disabled]="!cnt.valid">Submit</button>
+    </div>
+</form>
+
+<p></p>
+<pre>Value : {{cnt.value | json }} </pre>
+<pre>Valid : {{cnt.valid}} </pre>
+<pre>Touched : {{cnt.touched  }} </pre>
+<pre>Submitted : {{cnt.submitted  }} </pre>
+
+<p>first name value: {{nm.value}}</p>
+<p>first name valid: {{nm.valid}}</p>
+<p>first name Touched: {{nm.touched}}</p>

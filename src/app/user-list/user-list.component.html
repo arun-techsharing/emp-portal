@@ -1,0 +1,98 @@
+<h1>List of users registered</h1>
+<div>
+    <h4 *ngFor="let a of userColection;let i = index">
+        {{i+1}}. {{a}}
+    </h4>
+</div>
+
+<table>
+    <tr>
+        <th>User ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th>Contact Number</th>
+        <th>Address</th>
+    </tr>
+    <tr *ngFor="let usrDt of userCollection">
+        <td>
+            <span>{{usrDt.userId}}</span>
+
+        </td>
+        <td>
+            <span [ngClass]="{'textStyl':usrDt.name == 'Mahesh'}">{{usrDt.firstName | uppercase}}</span>
+        </td>
+        <td>
+            <span>{{usrDt.lastName}}</span>
+        </td>
+        <td>
+            <span>{{usrDt.age}}</span>
+        </td>
+        <td>
+            <span>{{usrDt.cntNbr}}</span>
+        </td>
+        <td>
+            <span>{{usrDt.address}}</span>
+        </td>
+        <td>
+            <a [routerLink]="['/user-details',usrDt.userId]">View Details </a>
+        </td>
+    </tr>
+
+<p>
+    {{userColection}}
+</p>
+<p>
+    {{userColection | slice:-2}}
+</p>
+
+</table>
+
+<p>
+    <button (click)="redrt()">Go to Registeration</button>
+</p>
+
+<br>
+<table>
+    <tr>
+        <th>User ID</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Email</th>
+        <th>Status</th>
+    </tr>
+    <tr *ngFor="let usrVal of userListBck">
+        <td>
+            <span>{{usrVal.id}}</span>
+
+        </td>
+        <td>
+            <span>{{usrVal.name | uppercase}}</span>
+        </td>
+        <td>
+            <span>{{usrVal.gender}}</span>
+        </td>
+        <td>
+            <span>{{usrVal.email}}</span>
+        </td>
+        <td>
+            <span>{{usrVal.status}}</span>
+        </td>
+        <td>
+            <a [routerLink]="['/user-details',usrVal.userId]">View Details </a>
+        </td>
+    </tr>
+
+<p>
+    {{userColection}}
+</p>
+<p>
+    {{userColection | slice:-2}}
+</p>
+
+</table>
+
+<form [formGroup]="searchForm">
+   Search User by ID: <input type="text" formControlName="userId">
+   <button type="submit" (click)="searchUser()">Search</button>
+</form>

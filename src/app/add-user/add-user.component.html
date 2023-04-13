@@ -1,0 +1,7 @@
+<h1>Add User</h1>
+
+<form [formGroup]="userForm">
+    User Name: <input type="text" formControlName="userName"><br />
+    Job Designaion: <input type="text" formControlName="jobName">
+    <button type="submit" (click)="addUser()">Add User</button>
+</form>

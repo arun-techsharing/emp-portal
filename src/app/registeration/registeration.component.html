@@ -1,0 +1,87 @@
+<h1>User Regiteration</h1>
+<form>
+    <form>
+        <div *ngIf="userTyp == 'customer' || userTyp == 'admin';then customerSec">
+            <p>this section is visible when we are not using Then block, if we use then block it will refer to the block
+                which is mention in the then condition</p>
+            <p>trying to understand ng directives in angular</p>
+        </div>
+        <ng-template #customerSec>
+            <div>
+                <div>
+                    <label>First Name:* </label><input type="text" id="fName" value="Raja" autofocus autocomplete="on"
+                        name="fName">
+                    <label>Last Name:* </label><input type="text" id="lName" placeholder="Enter Last Name" required
+                        name="lName">
+                </div><br />
+                <div>
+                    <p><label>Address 1</label><input type="text" id="addr1" disabled></p>
+                    <p><label>Address 2</label><input type="text" id="addr2" maxlength="20" name="addr2"></p>
+                    <p><label>City</label><input type="text" id="city" maxlength="5" name="city"></p>
+                    <p> <label>State:</label>
+                        <select name="state">
+                            <option>TamilNadu</option>
+                            <option>Karnataka</option>
+                            <option>Andra Pradesh</option>
+                            <option selected>Kerala</option>
+                        </select>
+                    </p>
+                    <p><label>Country:</label>
+                        <select name="Cntry">
+                            <option>IND</option>
+                            <option>USA</option>
+                            <option>UK</option>
+                        </select>
+                    </p>
+                    <select>
+                        <option>Web Development</option>
+                        <option>Server side DEvelopment</option>
+                        <option>Database Developer</option>
+
+                    </select>
+                </div><br />
+                <div>
+                    <label>Gender</label>
+                    <input type="radio" name="gender"><span>Male</span>
+                    <input type="radio" name="gender"><span>Female</span><br />
+                    <label>Date of Birth</label>
+                    <input type="date" name="DOB">
+                </div><br />
+                <div>
+                    <label>Email:</label><input type="email" autocomplete="on" name="email"><br />
+                    <label>Contact Number:</label><input type="number" name="cntNbr">
+                </div><br />
+                <div>
+                    <label>Hobbies</label>
+                    <input type="checkbox" checked name="hob-play">Playing
+                    <input type="checkbox">Reading
+                    <input type="checkbox">Travelling
+                </div><br />
+                <div>
+                    <label>Password</label><input type="password" name="pwd">
+                </div><br />
+
+            </div>
+        </ng-template>
+
+        <!-- This is for Admin users only -->
+
+        <div *ngIf="userTyp=='admin'">
+            <div>
+                <label>Customer ID:</label><input type="text" name="" id="custID">
+
+            </div>
+            <div>
+                <label>Customer Branch:</label><input type="text" name="" id="branch">
+            </div>
+            <div>
+                <label>Customer Acct Nbr:</label><input type="text" name="" id="acctNbr">
+            </div>
+        </div>
+
+        <div>
+            <input type="submit" class="btn btn-success">
+            <input type="reset" class="btn btn-outline-secondary">
+        </div>
+    </form>
+</form>

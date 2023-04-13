@@ -1,0 +1,19 @@
+<h1 [innerHTML]="title">Home component</h1>
+
+<p *ngIf="showHeading == true">Welcome to component based framework</p>
+<h3>Data Binding</h3>
+<h4>Interpolation</h4>
+<p>My name is {{name}}</p>
+<p>{{getCurrentTime()}}</p>
+<p>{{ 60 * 67}}</p>
+<p>Marks scored by {{name}} is {{10*60}}</p>
+<button [disabled]="isValid" (click)="showMyName()">Display User Name</button>
+<img [class]="cssCls" [src]="imgSrc" style="width: 20%;">
+
+<button (click)="counterIncrement()">Increment</button>
+<!-- <p>Counter Value {{cntr}}</p>
+
+<app-registeration></app-registeration>
+
+<app-user-list></app-user-list> -->
+<app-data-table [count]="cntr" [dataCollection]="userDetailsList" (id)="getId($event)"></app-data-table>

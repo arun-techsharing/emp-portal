@@ -1,0 +1,33 @@
+<h1>Edit Product</h1>
+
+<form [formGroup]="productForm">
+    <div>
+        <label for="prodName">Product Name:</label>
+        <input type="text" name="prodName" formControlName="prodName">
+        <p *ngIf="!productForm.controls.prodName.valid && (productForm.controls.prodName.dirty || productForm.controls.prodName.touched)">Prodcut name is invalid, only Text characters are allowed</p>
+    </div>
+    <div>
+        <label for="price">Price:</label>
+        <input type="text" name="price" formControlName="price">
+    </div>
+    <div>
+        <label for="qnty">Quantity Available:</label>
+        <input type="text" name="qnty" formControlName="quantiyAvl">
+    </div>
+    <div>
+        <label for="sizes">Available Sizes:</label>
+        <select formControlName="size">
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+            <option>XL</option>
+        </select>
+    </div>
+    <div>
+        <label for="discount">Discounted Percentage:</label>
+        <input type="text" name="discount" formControlName="discount">
+    </div>
+    <div>
+        <button type="submit" [disabled]="!productForm.valid">Update Product</button>
+    </div>
+</form>

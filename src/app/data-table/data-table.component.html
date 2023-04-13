@@ -1,0 +1,12 @@
+<h1>Datatable</h1>
+
+<p>Value of Count is {{count}}</p>
+
+<table>
+    <tr *ngFor="let dt of dataCollection">
+        <td>{{dt.userId}}</td>
+        <td>{{dt.firstName}}</td>
+        <td><button (click)="selectedID(dt.userId)">Get Details</button></td>
+    </tr>
+</table>
+<button (click)="sendID()">pass ID value</button>
