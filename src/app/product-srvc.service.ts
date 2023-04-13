@@ -74,7 +74,7 @@ export class ProductSrvcService {
   public getUserById(userId: string): Observable<any> {
     
     let param = new HttpParams().append('id', userId)
-    return this.http.get('https://gorest.co.in/public/v2/users', { observe: 'body', params: param });
+    return this.http.get('https://gorest.co.in/public/v2/users', { observe: 'body'});
 
 
   }
