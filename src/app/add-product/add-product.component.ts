@@ -21,12 +21,7 @@ export class AddProductComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // this.productForm.patchValue({
-    //   prodName:'shampoo',
-    //   price:'120',
-    //   quantiyAvl:'10',
-    //   size:'L',
-    // })
+   
 
   }
 
